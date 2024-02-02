@@ -8,7 +8,7 @@ namespace ConsoleAppProject.App01
     /// output the equivalent distance in another unit (toUnit).
     /// </summary>
     /// <author>
-    /// Ismaeel's version 0.6
+    /// Asim Version 0.1
     /// </author>
     public class DistanceConverter
     {
