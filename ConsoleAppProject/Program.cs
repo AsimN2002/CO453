@@ -1,5 +1,5 @@
 ﻿using ConsoleAppProject.App01;
-using ConsoleAppProject.App03;
+using ConsoleAppProject.App02;
 using ConsoleAppProject.Helpers;
 using System;
 
@@ -11,7 +11,7 @@ namespace ConsoleAppProject
     /// to start App01 to App05 for CO453 CW1
     /// 
     /// This Project has been modified by:
-    /// Asim Nawaiz 26/01/2024
+    /// Ismaeel Omer  25/01/2024
     /// </summary>
     public static class Program
     {
@@ -25,8 +25,12 @@ namespace ConsoleAppProject
             Console.WriteLine(" =================================================");
             Console.WriteLine();
 
+
             DistanceConverter converter = new DistanceConverter();
-            //converter.run();
+  
+            converter.ConvertDistance();
+            
+
         }
     }
 }
