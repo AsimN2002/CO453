@@ -10,12 +10,51 @@ namespace ConsoleAppProject.Helpers
     /// user to select a choice from a list of choices.
     /// There are methods for outputting a main heading
     /// and a title.
-    /// <author>
-    /// Derek Peacock 2021
+    /// <author>9
+    /// Asim Nawaiz 2024
     /// </author>
     /// </summary>
     public static class ConsoleHelper
     {
+        internal static App02.BMI BMI
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public static App01.ConsoleAppProject.App01.DistanceConverter DistanceConverter
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public static App03.StudentGrades StudentGrades
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public static App04.NewsApp NewsApp
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public static App04.NewsFeed NewsFeed
+        {
+            get => default;
+            set
+            {
+            }
+        }
 
         /// <summary>
         /// This method displays a list of numbered choices to the
@@ -24,16 +63,34 @@ namespace ConsoleAppProject.Helpers
         /// </summary>
         public static int SelectChoice(string[] choices)
         {
-            // Display all the choices
+            int choiceNo;
+            int lastChoice = choices.Length;
+            bool validChoice;
 
-            DisplayChoices(choices);
+            string errorMessage =
+                $"\n INVALID CHOICE: must be 1 to {lastChoice} !";
 
-            // Get the user's choice
+            do
+            {
+                DisplayChoices(choices);
 
-            int choiceNo = (int)InputNumber("\n Please enter your choice > ", 
-                                            1, choices.Length);
+                choiceNo = (int)InputNumber(
+                    " Please enter your choice > ", 1, lastChoice);
+
+                if ((choiceNo < 1) || (choiceNo > lastChoice))
+                {
+                    validChoice = false;
+                    Console.WriteLine(errorMessage);
+                }
+                else validChoice = true;
+
+            } while (!validChoice);
+
+            Console.WriteLine();
+
             return choiceNo;
         }
+
 
         /// <summary>
         /// This displays all the available choices in a numbered
@@ -48,6 +105,7 @@ namespace ConsoleAppProject.Helpers
                 choiceNo++;
                 Console.WriteLine($"    {choiceNo}.  {choice}");
             }
+            Console.WriteLine();
         }
 
 
@@ -74,7 +132,7 @@ namespace ConsoleAppProject.Helpers
                 catch (Exception)
                 {
                     isValid = false;
-                    Console.WriteLine(" INVALID NUMBER!");
+                    Console.WriteLine(" INVALID NUMBER! Please enter a valid choice. ");
                 }
 
             } while (!isValid);
@@ -125,7 +183,7 @@ namespace ConsoleAppProject.Helpers
 
             Console.WriteLine("\n ---------------------------------");
             Console.WriteLine($"    {heading}          ");
-            Console.WriteLine("     by Derek Peacock           ");
+            Console.WriteLine("     by Asim Nawaiz           ");
             Console.WriteLine(" ---------------------------------" +
                 "\n");
 
@@ -143,13 +201,18 @@ namespace ConsoleAppProject.Helpers
             Console.WriteLine($"\n {title}");
             Console.Write(" ");
 
-            for(int count = 0; count <= title.Length; count++)
+            for (int count = 0; count <= title.Length; count++)
             {
                 Console.Write("-");
             }
 
             Console.WriteLine("\n");
             Console.ResetColor();
+        }
+
+        internal static void DisplayErrorMessage(string v)
+        {
+            throw new NotImplementedException();
         }
     }
 }
