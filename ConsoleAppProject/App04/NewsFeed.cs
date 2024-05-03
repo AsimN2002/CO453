@@ -10,12 +10,12 @@ namespace ConsoleAppProject.App04
     /// application.
     ///</summary>
     ///<author>
-    ///  Ismaeel Omer
+    ///  Asim Nawaiz
     ///  version 0.1
     ///</author> 
     public class NewsFeed
     {
-        public const string AUTHOR = "Ismaeel";
+        public const string AUTHOR = "Asim";
 
 
         private readonly List<Post> posts;
@@ -25,7 +25,7 @@ namespace ConsoleAppProject.App04
         {
             posts = new List<Post>();
 
-            MessagePost post = new MessagePost(AUTHOR, "I Like cars");
+            MessagePost post = new MessagePost(AUTHOR, "I Like cricket");
             AddMessagePost(post);
             post.AddComment("hello");
 

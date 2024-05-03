@@ -35,7 +35,7 @@ namespace ConsoleAppProject.App04
         //Display Menu//
         public void DisplayMenu()
         {
-            ConsoleHelper.OutputHeading("\t\t Ismaeel's News Feed");
+            ConsoleHelper.OutputHeading("\t\t Asim News Feed");
 
             Console.ForegroundColor = ConsoleColor.Yellow;
 
